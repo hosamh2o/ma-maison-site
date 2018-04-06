@@ -1,0 +1,90 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="UTF-8">
+  <title>paris</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
+      <link rel="stylesheet" href="css/style.css">
+           <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+
+
+  <div id="app" class="wrapper" v-cloak v-bind:class="{'is-previous': isPreviousSlide, 'first-load': isFirstLoad}">
+            <div class="slide-wrapper"
+                 v-for="(slide, index) in slides"
+                 v-bind:class="{ active: index === currentSlide }"
+                 v-bind:style="{ 'z-index': (slides.length - index), 'background-image': 'url(' + slide.bgImg + ')' }">
+                <div class="slide-inner">
+                    <div class="slide-bg-text">
+                        <p>{{ slide.headlineFirstLine }}</p>
+                        <p>{{ slide.headlineSecondLine }}</p>
+                    </div>
+                    <div class="slide-rect-filter">
+                        <div class="slide-rect" v-bind:style="{'border-image-source': 'url(' + slide.rectImg + ')'}"></div>
+                    </div>
+                    <div class="slide-content">
+                        <h1 class="slide-content-text"><p>{{ slide.headlineFirstLine }}</p><p>{{ slide.headlineSecondLine }}</p></h1><a class="slide-content-cta">Call To Action</a></div>
+                    <h2 class="slide-side-text"><span>{{ slide.sublineFirstLine }} / </span><span>{{ slide.sublineSecondLine }}</span></h2></div>
+            </div>
+        <div class="controls-container">
+            <button class="controls-button"
+                    v-for="(slide, index) in slides"
+                    v-bind:class="{ active: index === currentSlide }"
+                    v-on:click="updateSlide(index)">{{ slide.headlineFirstLine }} {{ slide.headlineSecondLine }}</button>
+        </div>
+        <div class="pagination-container">
+            <span class="pagination-item"
+                  v-for="(slide, index) in slides"
+                  v-bind:class="{ active: index === currentSlide }"
+                  v-on:click="updateSlide(index)"></span>
+        </div>
+    </div>
+    <div class="div1">
+    Ce Framework CSS n'est pas simplement un thème particulier pour Twitter Bootstrap,
+       mais il s'agit réellement d'un Framework à part entière qui a ses propres composants
+        ses propres règles CSS. L'avantage de l'approche Material design, c'est qu'elle permet
+        d'itérer facilement et de créer rapidement une interface propre. Materialize inclut en
+         plus une série de composants JavaScript qui permettent de réaliser des effets comme les
+          vagues sur les boutons, ou encore de gérer des effets de parallaxe
+  </div>
+  <br>
+  <br>
+
+<iframe width="826" height="480" src="https://www.youtube.com/embed/hREcgljzKPA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+ <a href="index1.html"><input  type="button" name="back to home" value="back" class="btn">  </a>
+<br>
+<br>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js'></script>
+    <script src="js/index.js"></script>
+  </main>
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+              <ul>
+            <li><a class="grey-text text-lighten-3" href="index1.html">PAGE D'ACCIELLE</a></li>
+            <li><a class="grey-text text-lighten-3" href="region.html">LE REGON</a></li>
+            <li><a class="grey-text text-lighten-3" href="formulaire.html">CONTACT US</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2018 powred by   HOSAM
+      <a class="grey-text text-lighten-4 right" href="region.html">GO TOP</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
